@@ -111,7 +111,10 @@ p2i-workflow-cn/
 两个毛绒玩偶在迷你桌面擂台上打架，可爱幽默，不血腥，像玩具广告图。
 ```
 
-完整示例见 [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)。
+完整示例见：
+
+- [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
+- [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
 
 ## 兼容性说明
 
@@ -133,6 +136,14 @@ p2i-workflow-cn/
 ## 验收标准
 
 验收清单见 [docs/acceptance.md](./docs/acceptance.md)。
+
+## Workspace Skill 入口
+
+如果你在 `D:\VsCodeProjects` 工作区内使用 Codex / OpenCode，可挂一个本地入口 skill：
+
+- `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow-cn/SKILL.md`
+
+这个入口 skill 会把本仓库作为 `source of truth`，方便后续在工作区里直接触发 `P2I Workflow`，而不需要每次手动打开仓库文件。
 
 ## License
 
