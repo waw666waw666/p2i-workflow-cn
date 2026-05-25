@@ -13,6 +13,22 @@ P2I stands for `Prompt to Image`.
 
 This repository is not an image generation app. It is a prompt engineering workflow that helps users move from a rough idea to a stable final prompt before sending it to an image model.
 
+## From rough idea to usable prompt
+
+Before:
+
+```txt
+Make a futuristic singer poster, neon lights, cool style, for promotion.
+```
+
+After:
+
+```txt
+A structured final prompt with one clear visual route, subject, scene, composition, lighting, style, Negative Prompt, replaceable variables, and a quality check.
+```
+
+This is the point of P2I: turn vague ideas into prompts people can actually copy and use.
+
 ## Why this skill
 
 Most image prompting failures happen before image generation:
@@ -37,6 +53,14 @@ Prompt 1 -> Prompt 2 -> Image generation
 - Skill entry: [p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
 - Full workflow guide: [p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
 - Chinese readme: [README.zh-CN.md](./README.zh-CN.md)
+
+## Why people will want this
+
+- You do not need to invent a full prompt structure from scratch
+- You get a cleaner result than “just ask the model to optimize it”
+- You can use the same workflow across multiple image tools
+- You can switch between Chinese-first and English-first prompting without changing the method
+- You can install it as a skill or just copy the prompt template and use it immediately
 
 ## Install this skill
 
@@ -123,6 +147,15 @@ Useful trigger phrases:
 - `do not generate the image yet, give me the prompt first`
 - `give me a copy-ready GPT Image prompt`
 - `give me an English Midjourney-ready prompt`
+
+Minimal invocation example:
+
+```txt
+use p2i-workflow
+My rough idea is: a premium skincare bottle product image with clean lighting and elegant reflections.
+Target tool: GPT Image
+Preferred language: Chinese
+```
 
 ## When to use Chinese vs English
 

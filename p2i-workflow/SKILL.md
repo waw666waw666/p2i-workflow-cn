@@ -34,6 +34,26 @@ Users can clone this repository and use these files immediately:
 - English Prompt 1: [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
 - Skill entry: [SKILL.md](./SKILL.md)
 
+## Quick invocation snippet
+
+Users can invoke this skill with a minimal request like:
+
+```txt
+use p2i-workflow
+My rough idea is: a cute toy-fight scene on a mini tabletop ring, playful, ad-like, not violent.
+Target tool: GPT Image
+Preferred language: Chinese
+```
+
+Or:
+
+```txt
+use p2i-workflow
+My rough idea is: a futuristic concert poster with neon lighting and a strong cyberpunk mood.
+Target tool: Midjourney
+Preferred language: English
+```
+
 ### Option 2. Install as a local skill folder
 
 If the agent platform supports `SKILL.md`-based skills, users can install this repository as a skill by placing the folder under their local skills directory.

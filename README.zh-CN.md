@@ -13,6 +13,22 @@ P2I 是 `Prompt to Image` 的缩写。
 
 这个仓库不是生图产品，而是一套 `prompt engineering workflow`。它的重点不是“直接出图”，而是先把模糊想法收束成稳定的最终 Prompt，再交给生图模型执行。
 
+## 从粗略想法到可用 Prompt
+
+输入前：
+
+```txt
+做一张未来感女歌手宣传海报，霓虹灯，酷一点。
+```
+
+输出后：
+
+```txt
+一个已经整理好的最终 Prompt，里面有单一主路线、清晰主体、场景、构图、光影、风格、Negative Prompt、可替换变量和质量检查。
+```
+
+这个 skill 的价值就在这里：把“模糊想法”变成“可直接复制去生图的结果”。
+
 ## 这个 skill 的优点
 
 - `两窗口分工清楚`：A窗口 只负责出 Prompt，B窗口 才负责真正生图
@@ -44,6 +60,14 @@ P2I 是 `Prompt to Image` 的缩写。
 - Skill 入口：[p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
 - 工作流说明：[p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
 - 英文 README：[README.md](./README.md)
+
+## 为什么别人会想用它
+
+- 不需要从零发明一套完整 Prompt 结构
+- 比“直接让模型优化一下”更稳、更可复制
+- 同一套工作流可以跨多个生图工具使用
+- 中文优先和英文优先两条路径都已经准备好
+- 可以安装成 skill，也可以直接复制提示词马上用
 
 ## 安装这个 skill
 
@@ -121,6 +145,14 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 - `帮我把这个粗略想法整理成可复制 Prompt`
 - `给我一个适合 GPT Image 的中文 Prompt`
 - `给我一个适合 Midjourney 的英文 Prompt`
+
+最小调用示例：
+
+```txt
+use p2i-workflow
+我的粗略想法是：做一张高级护肤品瓶身产品图，干净背景，玻璃质感，柔和高光。
+目标工具：GPT Image
+```
 
 ## 什么时候用中文，什么时候用英文
 
