@@ -1,5 +1,5 @@
 ---
-name: p2i-workflow-cn
+name: p2i-workflow
 description: Turn rough image ideas into structured final prompts with a strict two-window workflow. Use when the user wants prompt refinement, rough idea to final prompt, or a reusable image prompting skill in Chinese or English.
 ---
 

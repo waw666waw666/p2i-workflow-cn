@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for contributing to `p2i-workflow-cn`.
+Thanks for contributing to `p2i-workflow`.
 
 ## What to contribute
 

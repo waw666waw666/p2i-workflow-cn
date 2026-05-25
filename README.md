@@ -6,7 +6,7 @@
 [![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
 [![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./SKILL.md)
 
-> Prompt to Image Workflow CN
+> Prompt to Image Workflow
 > A reusable skill and prompt workflow for turning rough Chinese image ideas into structured, copy-ready final prompts.
 
 P2I stands for `Prompt to Image`.
@@ -169,7 +169,7 @@ This workflow is optimized for Chinese long prompts first.
 ## Repository structure
 
 ```txt
-p2i-workflow-cn/
+p2i-workflow/
 ├─ README.md
 ├─ README.zh-CN.md
 ├─ SKILL.md
@@ -190,7 +190,7 @@ p2i-workflow-cn/
 
 If you use Codex / OpenCode inside `D:\VsCodeProjects`, you can also mount the local workspace entry skill:
 
-- `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow-cn/SKILL.md`
+- `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow/SKILL.md`
 
 That local entry skill points back to this repository as the source of truth.
 

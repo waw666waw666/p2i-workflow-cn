@@ -15,7 +15,7 @@
 - Example: plush toy fight scene
 - Example: skincare bottle product image
 - Example: cyberpunk concert poster
-- Workspace entry skill under `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow-cn`
+- Workspace entry skill under `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow`
 
 ### Changed
 

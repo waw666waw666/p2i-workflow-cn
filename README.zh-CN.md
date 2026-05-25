@@ -6,7 +6,7 @@
 [![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
 [![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./SKILL.md)
 
-> Prompt to Image Workflow CN
+> Prompt to Image Workflow
 > 一个可复用的 skill + 提示词工作流，用来把粗略中文生图想法整理成结构化、可复制的最终 Prompt。
 
 P2I 是 `Prompt to Image` 的缩写。
@@ -167,7 +167,7 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 ## 仓库结构
 
 ```txt
-p2i-workflow-cn/
+p2i-workflow/
 ├─ README.md
 ├─ README.zh-CN.md
 ├─ SKILL.md
@@ -188,7 +188,7 @@ p2i-workflow-cn/
 
 如果你在 `D:\VsCodeProjects` 工作区中使用 Codex / OpenCode，也可以直接挂本地入口 skill：
 
-- `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow-cn/SKILL.md`
+- `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow/SKILL.md`
 
 这个本地入口 skill 会把当前仓库作为 `source of truth`。
 
