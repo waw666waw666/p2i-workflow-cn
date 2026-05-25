@@ -2,6 +2,10 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
+[![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./SKILL.md)
+
 > Prompt to Image Workflow CN
 > A reusable skill and prompt workflow for turning rough Chinese image ideas into structured, copy-ready final prompts.
 
@@ -25,6 +29,13 @@ P2I solves that with a strict two-window workflow.
 ```txt
 Prompt 1 -> Prompt 2 -> Image generation
 ```
+
+## Try it now
+
+- Direct prompt template: [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- Skill entry: [SKILL.md](./SKILL.md)
+- Full workflow guide: [docs/workflow.md](./docs/workflow.md)
+- Chinese readme: [README.zh-CN.md](./README.zh-CN.md)
 
 ## Core advantages
 
@@ -110,6 +121,12 @@ Hard rules:
 - [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
 - [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
 - [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)
+
+## Open source files
+
+- Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Change history: [CHANGELOG.md](./CHANGELOG.md)
+- Security policy: [SECURITY.md](./SECURITY.md)
 
 ## Compatibility
 

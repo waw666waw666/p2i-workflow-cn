@@ -2,6 +2,10 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
+[![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./SKILL.md)
+
 > Prompt to Image Workflow CN
 > 一个可复用的 skill + 提示词工作流，用来把粗略中文生图想法整理成结构化、可复制的最终 Prompt。
 
@@ -32,6 +36,13 @@ P2I 是 `Prompt to Image` 的缩写。
 ```txt
 提示词1 -> 提示词2 -> 生图
 ```
+
+## 立即使用
+
+- 直接复制提示词模板：[prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- Skill 入口：[SKILL.md](./SKILL.md)
+- 工作流说明：[docs/workflow.md](./docs/workflow.md)
+- 英文 README：[README.md](./README.md)
 
 ## 两窗口工作流
 
@@ -108,6 +119,12 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 - [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
 - [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
 - [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)
+
+## 开源协作文件
+
+- 贡献说明：[CONTRIBUTING.md](./CONTRIBUTING.md)
+- 更新记录：[CHANGELOG.md](./CHANGELOG.md)
+- 安全策略：[SECURITY.md](./SECURITY.md)
 
 ## 兼容性说明
 
