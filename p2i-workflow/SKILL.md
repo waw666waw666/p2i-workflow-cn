@@ -94,14 +94,21 @@ Typical user requests that should trigger this skill:
 - `帮我把这个生图想法整理成最终 Prompt`
 - `先不要生图，先给我一个可复制的 Prompt`
 - `用 P2I Workflow 帮我写 prompt`
+- `用 p2i 帮我写生图提示词`
+- `用 P2I 帮我整理生图提示词`
+- `帮我优化生图提示词`
 - `给我一个适合 GPT Image 的中文 Prompt`
 - `给我一个适合 Midjourney 的英文 Prompt`
 - `把这个粗略想法变成结构化 Prompt`
 
 Typical direct-routing phrases:
 
+- `p2i`
+- `P2I`
 - `use p2i-workflow`
 - `use the P2I skill`
+- `生图提示词`
+- `生图提示词优化`
 - `prompt to image workflow`
 - `A窗口先出 Prompt`
 
