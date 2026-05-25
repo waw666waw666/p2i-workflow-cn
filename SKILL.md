@@ -24,6 +24,33 @@ A Window: generate Prompt 2, text only
 B Window: use Prompt 2 for actual image generation
 ```
 
+## How users can install this skill
+
+### Option 1. Use this repository directly
+
+Users can clone this repository and use these files immediately:
+
+- Chinese Prompt 1: [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- English Prompt 1: [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+- Skill entry: [SKILL.md](./SKILL.md)
+
+### Option 2. Install as a local skill folder
+
+If the agent platform supports `SKILL.md`-based skills, users can install this repository as a skill by placing the folder under their local skills directory.
+
+Expected structure:
+
+```txt
+my-skills/
+└─ p2i-workflow/
+   ├─ SKILL.md
+   ├─ prompts/
+   ├─ examples/
+   └─ docs/
+```
+
+Then the agent can load `p2i-workflow` as a reusable skill.
+
 ## What this skill must do
 
 - Stay in `A Window` by default
@@ -39,6 +66,24 @@ If the user wants a prompt template they can copy directly, use:
 
 - Chinese Prompt 1: [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
 - English Prompt 1: [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+
+## Invocation examples
+
+Typical user requests that should trigger this skill:
+
+- `帮我把这个生图想法整理成最终 Prompt`
+- `先不要生图，先给我一个可复制的 Prompt`
+- `用 P2I Workflow 帮我写 prompt`
+- `给我一个适合 GPT Image 的中文 Prompt`
+- `给我一个适合 Midjourney 的英文 Prompt`
+- `把这个粗略想法变成结构化 Prompt`
+
+Typical direct-routing phrases:
+
+- `use p2i-workflow`
+- `use the P2I skill`
+- `prompt to image workflow`
+- `A窗口先出 Prompt`
 
 ## When to use Chinese vs English
 
@@ -60,6 +105,15 @@ Default rule:
 
 - If unclear, prefer Chinese for Chinese users
 - If the user says “I want broader compatibility” or names English-first tools, switch to English Prompt 1
+
+## What to return by default
+
+If the user does not specify a language:
+
+- return Chinese output for Chinese conversations
+- keep the structured workflow
+- use exactly one code block in the final prompt section
+- do not skip the quality check
 
 ## Output contract
 

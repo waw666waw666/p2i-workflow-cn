@@ -40,9 +40,39 @@ P2I 是 `Prompt to Image` 的缩写。
 ## 立即使用
 
 - 直接复制提示词模板：[prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- 英文提示词模板：[prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
 - Skill 入口：[SKILL.md](./SKILL.md)
 - 工作流说明：[docs/workflow.md](./docs/workflow.md)
 - 英文 README：[README.md](./README.md)
+
+## 安装这个 skill
+
+### 方式 1：安装成可复用 skill
+
+如果你的 agent 平台支持基于 `SKILL.md` 的 skill：
+
+1. 下载或 clone 这个仓库
+2. 保持文件夹名为 `p2i-workflow`
+3. 把整个文件夹放进你的本地 skills 目录
+4. 让 agent 加载 `p2i-workflow`
+
+最小目录结构：
+
+```txt
+skills/
+└─ p2i-workflow/
+   ├─ SKILL.md
+   ├─ prompts/
+   ├─ examples/
+   └─ docs/
+```
+
+### 方式 2：不安装，直接使用
+
+如果你不想安装 skill，也可以直接打开下面任意一个文件，复制到 AI 对话里使用：
+
+- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
 
 ## 两窗口工作流
 
@@ -80,6 +110,17 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 2. 让 agent 按 skill 规则执行
 3. 输入你的粗略中文生图想法
 4. 获取结构化的 `提示词2`
+
+## 怎么触发这个 skill
+
+推荐触发语句：
+
+- `use p2i-workflow`
+- `用 P2I Workflow 帮我写 prompt`
+- `先不要生图，先给我最终 Prompt`
+- `帮我把这个粗略想法整理成可复制 Prompt`
+- `给我一个适合 GPT Image 的中文 Prompt`
+- `给我一个适合 Midjourney 的英文 Prompt`
 
 ## 什么时候用中文，什么时候用英文
 

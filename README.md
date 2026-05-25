@@ -33,9 +33,39 @@ Prompt 1 -> Prompt 2 -> Image generation
 ## Try it now
 
 - Direct prompt template: [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- English prompt template: [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
 - Skill entry: [SKILL.md](./SKILL.md)
 - Full workflow guide: [docs/workflow.md](./docs/workflow.md)
 - Chinese readme: [README.zh-CN.md](./README.zh-CN.md)
+
+## Install this skill
+
+### Option 1. Install as a reusable skill
+
+If your agent platform supports `SKILL.md`-based skills:
+
+1. Download or clone this repository
+2. Keep the folder name as `p2i-workflow`
+3. Put the whole folder into your local skills directory
+4. Let your agent load `p2i-workflow`
+
+Minimal structure:
+
+```txt
+skills/
+└─ p2i-workflow/
+   ├─ SKILL.md
+   ├─ prompts/
+   ├─ examples/
+   └─ docs/
+```
+
+### Option 2. Use without installation
+
+If you do not want to install a skill, just open one of these files and copy it into your AI chat:
+
+- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
 
 ## Core advantages
 
@@ -82,6 +112,17 @@ B Window = image generation context, copies Prompt 2 to create the image
 2. Let your agent follow the skill rules
 3. Give it a rough Chinese image idea
 4. Get a structured Prompt 2 output
+
+## How to trigger this skill
+
+Useful trigger phrases:
+
+- `use p2i-workflow`
+- `use the P2I skill`
+- `help me turn this rough idea into a final prompt`
+- `do not generate the image yet, give me the prompt first`
+- `give me a copy-ready GPT Image prompt`
+- `give me an English Midjourney-ready prompt`
 
 ## When to use Chinese vs English
 
