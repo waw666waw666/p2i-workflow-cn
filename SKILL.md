@@ -1,83 +1,116 @@
 ---
 name: p2i-workflow-cn
-description: Turn rough Chinese image ideas into a structured final image prompt with a strict two-window workflow. Use when the user wants AI image prompt refinement, prompt structuring, or rough idea to final prompt in Chinese.
+description: Turn rough image ideas into structured final prompts with a strict two-window workflow. Use when the user wants prompt refinement, rough idea to final prompt, or a reusable image prompting skill in Chinese or English.
 ---
 
-# P2I Workflow CN
+# P2I Workflow Skill
 
-## Purpose
+## What this skill is
 
-把用户的粗略生图想法整理成一个可直接复制到生图工具的最终中文 Prompt。
+This is a reusable `prompt engineering skill`, not an image generation skill.
 
-这不是生图 skill，而是 prompt engineering skill。
+Its job is to turn a rough image idea into a structured, copy-ready final prompt before the user sends it to an image model.
 
-优先目标：
+Core workflow:
 
-- 把模糊想法变成稳定结构
-- 让输出可以直接复制
-- 避免 agent 越权直接生图
+```txt
+Prompt 1 -> Prompt 2 -> Image generation
+```
 
-## Required behavior
+Two-window model:
 
-- 当前工作流只有两个上下文：`A窗口` 和 `B窗口`
-- 你在 skill 中默认处于 `A窗口`
-- `A窗口` 只输出文字，不生图
-- 不要说“我来生成图片”
-- 不要调用任何 image generation 能力
-- 不要把最终提示词当成当前任务执行
+```txt
+A Window: generate Prompt 2, text only
+B Window: use Prompt 2 for actual image generation
+```
+
+## What this skill must do
+
+- Stay in `A Window` by default
+- Output text only
+- Never generate the image directly
+- Never say “I will generate the image now”
+- Never treat the final prompt as the current execution task
+- Return a structured `Prompt 2` that can be copied into `B Window`
+
+## Direct prompt entrypoints
+
+If the user wants a prompt template they can copy directly, use:
+
+- Chinese Prompt 1: [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- English Prompt 1: [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+
+## When to use Chinese vs English
+
+Use the Chinese Prompt 1 when:
+
+- the user writes in Chinese
+- the main target is `GPT Image / GPT Image 2 / 即梦 / 可灵`
+- the user wants Chinese-first prompting
+- the prompt is intended for Chinese workflow readability
+
+Use the English Prompt 1 when:
+
+- the main target is `Midjourney`, `Ideogram`, `Stable Diffusion`, or other English-first ecosystems
+- the user wants stronger cross-platform compatibility
+- the prompt needs English style words, camera words, material words, or text-in-image reliability
+- the user explicitly asks for an English prompt workflow
+
+Default rule:
+
+- If unclear, prefer Chinese for Chinese users
+- If the user says “I want broader compatibility” or names English-first tools, switch to English Prompt 1
 
 ## Output contract
 
-输出必须包含以下部分：
+The output must contain:
 
-1. `【图片类型判断】`
-2. `【参考方向】`
-3. `【结构提炼】`
-4. `【最终可复制提示词】`
-5. `【可替换变量】`
-6. `【可选版本方向】`
-7. `【质量检查】`
+1. `【图片类型判断】 / [Image Type]`
+2. `【参考方向】 / [Reference Direction]`
+3. `【结构提炼】 / [Structure]`
+4. `【最终可复制提示词】 / [Final Copy-Ready Prompt]`
+5. `【可替换变量】 / [Replaceable Variables]`
+6. `【可选版本方向】 / [Optional Directions]`
+7. `【质量检查】 / [Quality Check]`
 
-硬约束：
+Hard rules:
 
-- 整个输出只允许 1 个代码块
-- 这个代码块只能出现在 `【最终可复制提示词】`
-- 代码块里必须同时包含：
-  - `中文最终提示词：`
-  - `Negative Prompt：`
-- 默认不输出英文 Prompt
-- 默认不输出中文精简版
-
-## Workflow
-
-1. 判断用户想法属于哪类图片
-2. 选出一个最合适的主路线
-3. 提炼主体、材质、场景、构图、镜头、光影、色彩、风格、用途
-4. 生成适合 `B窗口` 直接复制的最终中文 Prompt
-5. 给出少量可替换变量和后续扩展方向
-6. 做一次质量检查
+- Only one code block is allowed in the entire output
+- That code block can only appear in the final prompt section
+- The code block must contain:
+  - the final main prompt
+  - the `Negative Prompt`
+- Do not output multiple conflicting main directions
 
 ## Decision rules
 
-- 如果用户需求里有多个方向，主动收束成一个主路线
-- 如果用户信息不完整，补一个最稳妥默认方案，不要停在追问
-- 如果用户明确要求“直接给我能复制的”，仍然必须保留固定结构和唯一代码块规则
-- 如果用户只是说“帮我写 Prompt”，默认使用本工作流，不直接切到图像生成
+- If the user gives multiple possible directions, collapse them into one main route
+- If the user input is incomplete, choose the safest default instead of getting stuck
+- If the user asks for “something I can copy directly,” still keep the structured workflow
+- If the user only says “help me write a prompt,” default to this skill instead of direct image generation
 
-## Rules
+## Recommended workflow
 
-- 不改变用户核心主题
-- 不乱加无关元素
-- 不混入多个互斥方向
-- 多写可见画面元素，少写空泛评价词
-- `Negative Prompt` 要根据图片类型定制，不要无脑堆太长
-- 如果参考站点不可访问，只能轻描淡写说明一句，不能影响最终输出
+1. Identify the image category
+2. Choose one main route
+3. Extract subject, material, scene, composition, lens, lighting, color, style, and usage
+4. Build a stable final prompt
+5. Add a category-specific `Negative Prompt`
+6. Add a small set of replaceable variables
+7. End with a quality check
 
-## Direct-use prompt
+## Source of truth
 
-如果用户要“直接复制提示词”，使用 [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)。
+Primary files:
 
-## Example
+- [README.md](./README.md)
+- [README.zh-CN.md](./README.zh-CN.md)
+- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+- [docs/workflow.md](./docs/workflow.md)
 
-参考 [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)。
-也可参考 [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md) 和 [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)。
+Examples:
+
+- [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
+- [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
+- [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)

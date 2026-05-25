@@ -83,6 +83,36 @@ B Window = image generation context, copies Prompt 2 to create the image
 3. Give it a rough Chinese image idea
 4. Get a structured Prompt 2 output
 
+## When to use Chinese vs English
+
+### Use Chinese when
+
+- your main target is `GPT Image / GPT Image 2 / 即梦 / 可灵`
+- your working language is Chinese
+- you want the workflow to stay readable for Chinese users
+- you care more about idea clarity than English keyword portability
+
+Recommended file:
+
+- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+
+### Use English when
+
+- your main target is `Midjourney`, `Ideogram`, `Stable Diffusion`, or a more English-first ecosystem
+- you want stronger cross-platform compatibility
+- you need English style vocabulary, camera vocabulary, material vocabulary, or text-in-image reliability
+- you are preparing prompts for a team or audience that already works in English
+
+Recommended file:
+
+- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+
+### Simple rule
+
+- Chinese-first workflow for Chinese users
+- English-first workflow for broader tool compatibility
+- If unsure, start in Chinese, then export to English when targeting Midjourney-like tools
+
 ## Output format
 
 The workflow output always includes:
