@@ -1,6 +1,6 @@
 ---
 name: p2i-workflow
-description: Turn rough image ideas into structured final prompts with a strict two-window workflow. Use when the user wants prompt refinement, rough idea to final prompt, or a reusable image prompting skill in Chinese or English.
+description: Turn rough image ideas into structured final prompts with a strict two-window workflow. Use when the user says p2i, P2I, 生图提示词, prompt refinement, or asks to turn a rough idea into a copy-ready image prompt in Chinese or English.
 ---
 
 # P2I Workflow Skill
@@ -53,6 +53,17 @@ My rough idea is: a futuristic concert poster with neon lighting and a strong cy
 Target tool: Midjourney
 Preferred language: English
 ```
+
+## Alias triggers
+
+This skill should also be considered a match for:
+
+- `p2i`
+- `P2I`
+- `生图提示词`
+- `生图提示词优化`
+- `先别生图，先给我 Prompt`
+- `帮我把这个想法整理成最终 Prompt`
 
 ### Option 2. Install as a local skill folder
 

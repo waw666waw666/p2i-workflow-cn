@@ -7,11 +7,19 @@
 [![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./p2i-workflow/SKILL.md)
 
 > Prompt to Image Workflow
-> A reusable skill and prompt workflow for turning rough Chinese image ideas into structured, copy-ready final prompts.
+> Turn rough ideas into structured, copy-ready prompts that work across GPT Image, Midjourney, Stable Diffusion, and more.
 
 P2I stands for `Prompt to Image`.
 
-This repository is not an image generation app. It is a prompt engineering workflow that helps users move from a rough idea to a stable final prompt before sending it to an image model.
+This repository is not an image generation app. It is a reusable `skill + prompt workflow` that helps users turn vague image ideas into clear final prompts before sending them to an image model.
+
+## Why people click this
+
+- `Copy-ready prompts`: get a prompt you can paste directly, not vague advice
+- `Works across tools`: designed for `GPT Image`, `Midjourney`, `Stable Diffusion`, and similar workflows
+- `Two-window discipline`: separate prompt writing from actual image generation
+- `Chinese-first`: optimized for Chinese users without blocking English-first output
+- `Installable skill`: use it as a `SKILL.md` skill or just copy the prompt template
 
 ## From rough idea to usable prompt
 
@@ -24,43 +32,39 @@ Make a futuristic singer poster, neon lights, cool style, for promotion.
 After:
 
 ```txt
-A structured final prompt with one clear visual route, subject, scene, composition, lighting, style, Negative Prompt, replaceable variables, and a quality check.
+A structured final prompt with one clear direction, subject, scene, composition, lighting, style, Negative Prompt, replaceable variables, and a quality check.
 ```
 
-This is the point of P2I: turn vague ideas into prompts people can actually copy and use.
+This is the point of P2I: turn something fuzzy into something usable.
 
-## Why this skill
+## Workflow at a glance
 
-Most image prompting failures happen before image generation:
+```mermaid
+flowchart LR
+    A["Rough idea<br/>What the user wants"] --> B["P2I / Prompt 1<br/>Skill or prompt template"]
+    B --> C["A Window<br/>Refine into Prompt 2<br/>Text only"]
+    C --> D["Copy-ready final prompt<br/>One clear route"]
+    D --> E["B Window / Image tool<br/>GPT Image, Midjourney, SD"]
+    E --> F["Generated image"]
+```
 
-- The model starts generating images instead of returning a prompt
-- The output is hard to copy and reuse
-- Chinese prompts are unstable in structure
-- `Negative Prompt` is missing or generic
-- Multiple conflicting styles get mixed together
-- There is no fixed workflow from rough idea to final prompt
+## Install flow
 
-P2I solves that with a strict two-window workflow.
-
-```txt
-Prompt 1 -> Prompt 2 -> Image generation
+```mermaid
+flowchart LR
+    A["Clone or download repo"] --> B["Keep folder name<br/>p2i-workflow"]
+    B --> C["Move folder into<br/>your local skills directory"]
+    C --> D["Load skill<br/>p2i-workflow"]
+    D --> E["Invoke with<br/>p2i / P2I / image prompt"]
 ```
 
 ## Try it now
 
-- Direct prompt template: [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
-- English prompt template: [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 - Skill entry: [p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
-- Full workflow guide: [p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
-- Chinese readme: [README.zh-CN.md](./README.zh-CN.md)
-
-## Why people will want this
-
-- You do not need to invent a full prompt structure from scratch
-- You get a cleaner result than “just ask the model to optimize it”
-- You can use the same workflow across multiple image tools
-- You can switch between Chinese-first and English-first prompting without changing the method
-- You can install it as a skill or just copy the prompt template and use it immediately
+- Chinese Prompt 1: [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
+- English Prompt 1: [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
+- Workflow guide: [p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
+- Chinese README: [README.zh-CN.md](./README.zh-CN.md)
 
 ## Install this skill
 
@@ -91,59 +95,14 @@ If you do not want to install a skill, just open one of these files and copy it 
 - [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 - [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 
-## Core advantages
+## Trigger words
 
-- `Two-window discipline`: separate prompt generation from actual image generation
-- `Copy-ready output`: exactly one code block for the final prompt section
-- `Chinese-first`: optimized for Chinese long-form prompting
-- `Reusable as a skill`: can be loaded by agents or used as a plain prompt template
-- `Stable structure`: image type, direction, structure, final prompt, variables, versions, quality check
-- `Safer prompting`: reduces style collision and accidental model overreach
+These phrases should naturally route to this workflow:
 
-## How it works
-
-```txt
-GitHub Prompt 1 template / Skill
-↓
-A Window: turns a rough idea into Prompt 2, text only, no image generation
-↓
-B Window: uses Prompt 2 for actual image generation
-```
-
-### Definitions
-
-```txt
-Prompt 1 = the meta prompt template / skill entry
-Prompt 2 = the final image prompt generated from the rough idea
-A Window = prompt generation context, text only, no image generation
-B Window = image generation context, copies Prompt 2 to create the image
-```
-
-## Quick start
-
-### Option 1. Use the prompt directly
-
-1. Open [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
-2. Copy the full Prompt 1 template
-3. Paste it into your `A Window`
-4. Fill in your idea after `我的粗略想法是：`
-5. Copy the single code block from `【最终可复制提示词】`
-6. Paste it into your `B Window` or another image generation tool
-
-### Option 2. Use it as a skill
-
-1. Open [p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
-2. Let your agent follow the skill rules
-3. Give it a rough Chinese image idea
-4. Get a structured Prompt 2 output
-
-## How to trigger this skill
-
-Useful trigger phrases:
-
-- `use p2i-workflow`
-- `use the P2I skill`
-- `help me turn this rough idea into a final prompt`
+- `p2i`
+- `P2I`
+- `image prompt`
+- `help me write an image prompt`
 - `do not generate the image yet, give me the prompt first`
 - `give me a copy-ready GPT Image prompt`
 - `give me an English Midjourney-ready prompt`
@@ -156,6 +115,14 @@ My rough idea is: a premium skincare bottle product image with clean lighting an
 Target tool: GPT Image
 Preferred language: Chinese
 ```
+
+## Core advantages
+
+- `Copy-ready output`: exactly one code block for the final prompt section
+- `Stable structure`: image type, direction, structure, final prompt, variables, versions, quality check
+- `Safer prompting`: reduces style collision and accidental model overreach
+- `Reusable method`: one workflow, many tools
+- `Language flexibility`: Chinese-first by default, English when needed
 
 ## When to use Chinese vs English
 
@@ -187,29 +154,6 @@ Recommended file:
 - English-first workflow for broader tool compatibility
 - If unsure, start in Chinese, then export to English when targeting Midjourney-like tools
 
-## Output format
-
-The workflow output always includes:
-
-- `【图片类型判断】`
-- `【参考方向】`
-- `【结构提炼】`
-- `【最终可复制提示词】`
-- `【可替换变量】`
-- `【可选版本方向】`
-- `【质量检查】`
-
-Hard rules:
-
-- Only one code block is allowed in the entire output
-- That code block only appears in `【最终可复制提示词】`
-- The code block must contain:
-  - `中文最终提示词`
-  - `Negative Prompt`
-- `A Window` only outputs text
-- No English prompt by default
-- No short Chinese version by default
-
 ## Best use cases
 
 - Product shots
@@ -238,7 +182,7 @@ This workflow is optimized for Chinese long prompts first.
 
 - `GPT Image / GPT Image 2 / 即梦 / 可灵` usually work well with the full Chinese prompt
 - `Midjourney / Stable Diffusion / some other tools` may treat formatting and `Negative Prompt` differently
-- If a platform does not work well with the full structure, keep the main Chinese final prompt first and adapt from there
+- If a platform does not work well with the full structure, keep the main final prompt first and adapt from there
 
 ## Repository structure
 
