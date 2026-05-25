@@ -10,8 +10,8 @@
 
 - Initial public repository structure
 - Core `SKILL.md`
-- Direct-use prompt template in `prompts/prompt1-final-cn.md`
-- Workflow guide and acceptance checklist
+- Direct-use prompt template in `p2i-workflow/prompts/prompt1-final-cn.md`
+- Workflow guide and acceptance checklist under `p2i-workflow/docs/`
 - Example: plush toy fight scene
 - Example: skincare bottle product image
 - Example: cyberpunk concert poster

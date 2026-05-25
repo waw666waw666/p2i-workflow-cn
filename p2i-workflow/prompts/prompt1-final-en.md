@@ -36,6 +36,10 @@ Code block rules:
 
 I will give you a rough image idea. You should use that idea, reference similar prompt structures when helpful, and transform it into a high-quality, stable, visually grounded final prompt.
 
+Preferred reference sites:
+1. https://evolink.ai/zh/gpt-image-2-prompts
+2. https://gpt-image2.canghe.ai/
+
 Important rules:
 1. This is a prompt task, not an image generation task.
 2. Do not change my core subject.
