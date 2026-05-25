@@ -196,6 +196,7 @@ Hard rules:
 Primary files:
 
 - [README.md](./README.md)
+- [README.en.md](./README.en.md)
 - [README.zh-CN.md](./README.zh-CN.md)
 - [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
 - [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)

@@ -1,83 +1,83 @@
 # P2I Workflow
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
+[English](./README.en.md) | [简体中文](./README.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
-[![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
+[![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.md)
 [![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./p2i-workflow/SKILL.md)
 
 > Prompt to Image Workflow
-> Turn rough ideas into structured, copy-ready prompts that work across GPT Image, Midjourney, Stable Diffusion, and more.
+> 把粗略想法整理成结构化、可直接复制的生图提示词，可用于 GPT Image、Midjourney、Stable Diffusion 等主流工具。
 
-P2I stands for `Prompt to Image`.
+P2I 是 `Prompt to Image` 的缩写。
 
-This repository is not an image generation app. It is a reusable `skill + prompt workflow` that helps users turn vague image ideas into clear final prompts before sending them to an image model.
+这不是一个生图产品，而是一套可复用的 `skill + prompt workflow`。它的重点不是“直接出图”，而是先把模糊想法整理成稳定、清晰、可复制的最终 Prompt，再交给生图模型执行。
 
-## Why people click this
+## 为什么别人会点进来
 
-- `Copy-ready prompts`: get a prompt you can paste directly, not vague advice
-- `Works across tools`: designed for `GPT Image`, `Midjourney`, `Stable Diffusion`, and similar workflows
-- `Two-window discipline`: separate prompt writing from actual image generation
-- `Chinese-first`: optimized for Chinese users without blocking English-first output
-- `Installable skill`: use it as a `SKILL.md` skill or just copy the prompt template
+- `可直接复制`：拿到的是能直接粘贴使用的 Prompt，不是泛泛建议
+- `跨工具可用`：同一套方法可覆盖 `GPT Image`、`Midjourney`、`Stable Diffusion` 等
+- `两窗口分工清晰`：先写 Prompt，再生图，减少跑偏
+- `中文优先`：更适合中文用户表达复杂想法
+- `可安装成 skill`：既能当 `SKILL.md` 使用，也能直接复制提示词模板
 
-## From rough idea to usable prompt
+## 从粗略想法到可用 Prompt
 
-Before:
-
-```txt
-Make a futuristic singer poster, neon lights, cool style, for promotion.
-```
-
-After:
+输入前：
 
 ```txt
-A structured final prompt with one clear direction, subject, scene, composition, lighting, style, Negative Prompt, replaceable variables, and a quality check.
+做一张未来感女歌手宣传海报，霓虹灯，酷一点。
 ```
 
-This is the point of P2I: turn something fuzzy into something usable.
+输出后：
 
-## Workflow at a glance
+```txt
+一个已经整理好的最终 Prompt，里面有单一主路线、主体、场景、构图、光影、风格、Negative Prompt、可替换变量和质量检查。
+```
+
+这就是 P2I 的价值：把“模糊想法”变成“可直接使用的 Prompt”。
+
+## 一眼看懂工作流
 
 ```mermaid
 flowchart LR
-    A["Rough idea<br/>What the user wants"] --> B["P2I / Prompt 1<br/>Skill or prompt template"]
-    B --> C["A Window<br/>Refine into Prompt 2<br/>Text only"]
-    C --> D["Copy-ready final prompt<br/>One clear route"]
-    D --> E["B Window / Image tool<br/>GPT Image, Midjourney, SD"]
-    E --> F["Generated image"]
+    A["粗略想法<br/>用户脑中的画面"] --> B["P2I / Prompt 1<br/>Skill 或提示词模板"]
+    B --> C["A窗口<br/>整理成 Prompt 2<br/>只输出文字"]
+    C --> D["可复制最终 Prompt<br/>单一路线"]
+    D --> E["B窗口 / 生图工具<br/>GPT Image、Midjourney、SD"]
+    E --> F["最终图片"]
 ```
 
-## Install flow
+## 安装流程图
 
 ```mermaid
 flowchart LR
-    A["Clone or download repo"] --> B["Keep folder name<br/>p2i-workflow"]
-    B --> C["Move folder into<br/>your local skills directory"]
-    C --> D["Load skill<br/>p2i-workflow"]
-    D --> E["Invoke with<br/>p2i / P2I / image prompt"]
+    A["下载或 clone 仓库"] --> B["保持目录名<br/>p2i-workflow"]
+    B --> C["把整个文件夹放进<br/>本地 skills 目录"]
+    C --> D["让 agent 加载<br/>p2i-workflow"]
+    D --> E["用 p2i / P2I / 生图提示词 调用"]
 ```
 
-## Try it now
+## 立即使用
 
-- Skill entry: [p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
-- Chinese Prompt 1: [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
-- English Prompt 1: [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
-- Workflow guide: [p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
-- Chinese README: [README.zh-CN.md](./README.zh-CN.md)
+- Skill 入口：[p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
+- 中文 Prompt 1：[p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
+- 英文 Prompt 1：[p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
+- 工作流说明：[p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
+- 英文 README：[README.en.md](./README.en.md)
 
-## Install this skill
+## 安装这个 skill
 
-### Option 1. Install as a reusable skill
+### 方式 1：安装成可复用 skill
 
-If your agent platform supports `SKILL.md`-based skills:
+如果你的 agent 平台支持 `SKILL.md`：
 
-1. Download or clone this repository
-2. Keep the folder name as `p2i-workflow`
-3. Put the whole folder into your local skills directory
-4. Let your agent load `p2i-workflow`
+1. 下载或 clone 这个仓库
+2. 保持文件夹名字为 `p2i-workflow`
+3. 把整个文件夹放进你的本地 skills 目录
+4. 让 agent 加载 `p2i-workflow`
 
-Minimal structure:
+最小目录结构：
 
 ```txt
 skills/
@@ -88,107 +88,108 @@ skills/
    └─ docs/
 ```
 
-### Option 2. Use without installation
+### 方式 2：不安装，直接使用
 
-If you do not want to install a skill, just open one of these files and copy it into your AI chat:
+如果你不想安装 skill，也可以直接打开下面任意一个文件，复制到 AI 对话里：
 
 - [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 - [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 
-## Trigger words
+## 触发词
 
-These phrases should naturally route to this workflow:
+这些说法都适合触发这套工作流：
 
 - `p2i`
 - `P2I`
-- `image prompt`
-- `help me write an image prompt`
-- `do not generate the image yet, give me the prompt first`
-- `give me a copy-ready GPT Image prompt`
-- `give me an English Midjourney-ready prompt`
+- `生图提示词`
+- `帮我写生图提示词`
+- `先不要生图，先给我 Prompt`
+- `给我一个可直接复制的 GPT Image Prompt`
+- `给我一个适合 Midjourney 的英文 Prompt`
 
-Minimal invocation example:
+最小调用示例：
 
 ```txt
 use p2i-workflow
-My rough idea is: a premium skincare bottle product image with clean lighting and elegant reflections.
-Target tool: GPT Image
-Preferred language: Chinese
+我的粗略想法是：做一张高端护肤品瓶身产品图，干净背景，玻璃质感，柔和高光。
+目标工具：GPT Image
+偏好语言：中文
 ```
 
-## Core advantages
+## 核心优点
 
-- `Copy-ready output`: exactly one code block for the final prompt section
-- `Stable structure`: image type, direction, structure, final prompt, variables, versions, quality check
-- `Safer prompting`: reduces style collision and accidental model overreach
-- `Reusable method`: one workflow, many tools
-- `Language flexibility`: Chinese-first by default, English when needed
+- `可复制输出`：最终 Prompt 部分固定为一个代码块，拿来就能用
+- `结构稳定`：图片类型、方向、结构、最终 Prompt、变量、版本、质量检查一套固定
+- `更不容易跑偏`：减少多风格混杂和模型越权直接生图
+- `同一方法可复用`：一套工作流适配多种生图工具
+- `语言可切换`：中文优先，也能导向英文版本
 
-## When to use Chinese vs English
+## 什么时候用中文，什么时候用英文
 
-### Use Chinese when
+### 用中文更合适
 
-- your main target is `GPT Image / GPT Image 2 / 即梦 / 可灵`
-- your working language is Chinese
-- you want the workflow to stay readable for Chinese users
-- you care more about idea clarity than English keyword portability
+- 目标工具是 `GPT Image / GPT Image 2 / 即梦 / 可灵`
+- 你的工作语言本来就是中文
+- 你希望工作流对中文用户更好理解
+- 你更在意想法表达清楚，而不是英文关键词迁移
 
-Recommended file:
+推荐文件：
 
 - [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 
-### Use English when
+### 用英文更合适
 
-- your main target is `Midjourney`, `Ideogram`, `Stable Diffusion`, or a more English-first ecosystem
-- you want stronger cross-platform compatibility
-- you need English style vocabulary, camera vocabulary, material vocabulary, or text-in-image reliability
-- you are preparing prompts for a team or audience that already works in English
+- 目标工具是 `Midjourney`、`Ideogram`、`Stable Diffusion` 或其他英文生态工具
+- 你更在意跨平台兼容性
+- 你需要更稳定的英文风格词、镜头词、材质词或画面文字控制
+- 你要把 Prompt 给英文团队或国际化场景使用
 
-Recommended file:
+推荐文件：
 
 - [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 
-### Simple rule
+### 一句话规则
 
-- Chinese-first workflow for Chinese users
-- English-first workflow for broader tool compatibility
-- If unsure, start in Chinese, then export to English when targeting Midjourney-like tools
+- 中文用户默认先用中文 Prompt 1
+- 如果目标是 Midjourney 这类英文生态工具，优先用英文 Prompt 1
+- 如果拿不准，先用中文整理想法，再导出成英文版本去跑跨平台工具
 
-## Best use cases
+## 适合的场景
 
-- Product shots
-- Posters
-- Character key visuals
-- Toy and stylized scenes
-- Social media campaign images
-- E-commerce hero images
-- Brand KV exploration
+- 产品图
+- 海报
+- 角色主视觉
+- 玩具 / 场景图
+- 社媒宣传图
+- 电商主图
+- 品牌 KV 探索
 
-## Examples
+## 示例
 
 - [p2i-workflow/examples/plush-toy-fight-example.md](./p2i-workflow/examples/plush-toy-fight-example.md)
 - [p2i-workflow/examples/skincare-bottle-product-example.md](./p2i-workflow/examples/skincare-bottle-product-example.md)
 - [p2i-workflow/examples/cyberpunk-poster-example.md](./p2i-workflow/examples/cyberpunk-poster-example.md)
 
-## Open source files
+## 开源协作文件
 
-- Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
-- Change history: [CHANGELOG.md](./CHANGELOG.md)
-- Security policy: [SECURITY.md](./SECURITY.md)
+- 贡献说明：[CONTRIBUTING.md](./CONTRIBUTING.md)
+- 更新记录：[CHANGELOG.md](./CHANGELOG.md)
+- 安全策略：[SECURITY.md](./SECURITY.md)
 
-## Compatibility
+## 兼容性说明
 
-This workflow is optimized for Chinese long prompts first.
+这套工作流优先面向中文长 Prompt：
 
-- `GPT Image / GPT Image 2 / 即梦 / 可灵` usually work well with the full Chinese prompt
-- `Midjourney / Stable Diffusion / some other tools` may treat formatting and `Negative Prompt` differently
-- If a platform does not work well with the full structure, keep the main final prompt first and adapt from there
+- `GPT Image / GPT Image 2 / 即梦 / 可灵` 通常可以直接使用完整中文 Prompt
+- `Midjourney / Stable Diffusion / 部分其他工具` 对格式和 `Negative Prompt` 的处理方式不同
+- 如果平台不适合完整结构，优先保留主 Prompt 主体，再按平台特性微调
 
-## Repository structure
+## 仓库结构
 
 ```txt
 repo-root/
 ├─ README.md
+├─ README.en.md
 ├─ README.zh-CN.md
 ├─ LICENSE
 ├─ CONTRIBUTING.md
@@ -201,26 +202,32 @@ repo-root/
    └─ docs/
 ```
 
-## Workspace skill entry
+## Workspace Skill 入口
 
-If you use Codex / OpenCode inside `D:\VsCodeProjects`, you can also mount the local workspace entry skill:
+如果你在 `D:\VsCodeProjects` 工作区内使用 Codex / OpenCode，也可以直接挂本地入口 skill：
 
 - `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow/SKILL.md`
 
-That local entry skill points back to this repository as the source of truth.
+这个本地入口 skill 会把当前仓库作为 `source of truth`。
 
-## Reference sites
+## 推荐的 GitHub About 文案
 
-These sites are used only to study prompt structure, composition patterns, and professional phrasing:
+推荐把仓库 About 写成：
+
+`中文 AI 生图提示词 Skill，用 p2i / P2I / 生图提示词 即可调用；copy-ready prompts that work across GPT Image, Midjourney, Stable Diffusion and more.`
+
+## 参考网站
+
+以下网站只用于学习提示词结构、构图方式和专业写法：
 
 1. [EvoLink GPT Image 2 Prompts](https://evolink.ai/zh/gpt-image-2-prompts)
 2. [GPT Image 2 Prompt Gallery](https://gpt-image2.canghe.ai/)
 
-This project does not copy or redistribute raw prompts from those websites.
+本项目不复制、不搬运或二次分发这些网站的原始 Prompt 内容。
 
-## Acceptance
+## 验收标准
 
-See [p2i-workflow/docs/acceptance.md](./p2i-workflow/docs/acceptance.md).
+见 [p2i-workflow/docs/acceptance.md](./p2i-workflow/docs/acceptance.md)。
 
 ## License
 

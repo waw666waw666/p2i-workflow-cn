@@ -1,9 +1,9 @@
 # P2I Workflow
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
+[English](./README.en.md) | [简体中文](./README.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
-[![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
+[![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.md)
 [![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./p2i-workflow/SKILL.md)
 
 > Prompt to Image Workflow
@@ -64,7 +64,7 @@ flowchart LR
 - 中文 Prompt 1：[p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 - 英文 Prompt 1：[p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 - 工作流说明：[p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
-- 英文 README：[README.md](./README.md)
+- 英文 README：[README.en.md](./README.en.md)
 
 ## 安装这个 skill
 
@@ -189,6 +189,7 @@ use p2i-workflow
 ```txt
 repo-root/
 ├─ README.md
+├─ README.en.md
 ├─ README.zh-CN.md
 ├─ LICENSE
 ├─ CONTRIBUTING.md
