@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
-[![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./SKILL.md)
+[![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./p2i-workflow/SKILL.md)
 
 > Prompt to Image Workflow
 > A reusable skill and prompt workflow for turning rough Chinese image ideas into structured, copy-ready final prompts.
@@ -32,10 +32,10 @@ Prompt 1 -> Prompt 2 -> Image generation
 
 ## Try it now
 
-- Direct prompt template: [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
-- English prompt template: [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
-- Skill entry: [SKILL.md](./SKILL.md)
-- Full workflow guide: [docs/workflow.md](./docs/workflow.md)
+- Direct prompt template: [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
+- English prompt template: [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
+- Skill entry: [p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
+- Full workflow guide: [p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
 - Chinese readme: [README.zh-CN.md](./README.zh-CN.md)
 
 ## Install this skill
@@ -64,8 +64,8 @@ skills/
 
 If you do not want to install a skill, just open one of these files and copy it into your AI chat:
 
-- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
-- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+- [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
+- [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 
 ## Core advantages
 
@@ -99,7 +99,7 @@ B Window = image generation context, copies Prompt 2 to create the image
 
 ### Option 1. Use the prompt directly
 
-1. Open [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+1. Open [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 2. Copy the full Prompt 1 template
 3. Paste it into your `A Window`
 4. Fill in your idea after `我的粗略想法是：`
@@ -108,7 +108,7 @@ B Window = image generation context, copies Prompt 2 to create the image
 
 ### Option 2. Use it as a skill
 
-1. Open [SKILL.md](./SKILL.md)
+1. Open [p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
 2. Let your agent follow the skill rules
 3. Give it a rough Chinese image idea
 4. Get a structured Prompt 2 output
@@ -135,7 +135,7 @@ Useful trigger phrases:
 
 Recommended file:
 
-- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 
 ### Use English when
 
@@ -146,7 +146,7 @@ Recommended file:
 
 Recommended file:
 
-- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+- [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 
 ### Simple rule
 
@@ -189,9 +189,9 @@ Hard rules:
 
 ## Examples
 
-- [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
-- [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
-- [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)
+- [p2i-workflow/examples/plush-toy-fight-example.md](./p2i-workflow/examples/plush-toy-fight-example.md)
+- [p2i-workflow/examples/skincare-bottle-product-example.md](./p2i-workflow/examples/skincare-bottle-product-example.md)
+- [p2i-workflow/examples/cyberpunk-poster-example.md](./p2i-workflow/examples/cyberpunk-poster-example.md)
 
 ## Open source files
 
@@ -210,21 +210,18 @@ This workflow is optimized for Chinese long prompts first.
 ## Repository structure
 
 ```txt
-p2i-workflow/
+repo-root/
 ├─ README.md
 ├─ README.zh-CN.md
-├─ SKILL.md
 ├─ LICENSE
-├─ .gitignore
-├─ prompts/
-│  └─ prompt1-final-cn.md
-├─ examples/
-│  ├─ plush-toy-fight-example.md
-│  ├─ skincare-bottle-product-example.md
-│  └─ cyberpunk-poster-example.md
-└─ docs/
-   ├─ workflow.md
-   └─ acceptance.md
+├─ CONTRIBUTING.md
+├─ CHANGELOG.md
+├─ SECURITY.md
+└─ p2i-workflow/
+   ├─ SKILL.md
+   ├─ prompts/
+   ├─ examples/
+   └─ docs/
 ```
 
 ## Workspace skill entry
@@ -246,7 +243,7 @@ This project does not copy or redistribute raw prompts from those websites.
 
 ## Acceptance
 
-See [docs/acceptance.md](./docs/acceptance.md).
+See [p2i-workflow/docs/acceptance.md](./p2i-workflow/docs/acceptance.md).
 
 ## License
 

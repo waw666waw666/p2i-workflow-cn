@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![Language: Chinese-first](https://img.shields.io/badge/language-Chinese--first-blue.svg)](./README.zh-CN.md)
-[![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./SKILL.md)
+[![Type: Skill](https://img.shields.io/badge/type-skill-orange.svg)](./p2i-workflow/SKILL.md)
 
 > Prompt to Image Workflow
 > 一个可复用的 skill + 提示词工作流，用来把粗略中文生图想法整理成结构化、可复制的最终 Prompt。
@@ -39,10 +39,10 @@ P2I 是 `Prompt to Image` 的缩写。
 
 ## 立即使用
 
-- 直接复制提示词模板：[prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
-- 英文提示词模板：[prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
-- Skill 入口：[SKILL.md](./SKILL.md)
-- 工作流说明：[docs/workflow.md](./docs/workflow.md)
+- 直接复制提示词模板：[p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
+- 英文提示词模板：[p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
+- Skill 入口：[p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
+- 工作流说明：[p2i-workflow/docs/workflow.md](./p2i-workflow/docs/workflow.md)
 - 英文 README：[README.md](./README.md)
 
 ## 安装这个 skill
@@ -71,8 +71,8 @@ skills/
 
 如果你不想安装 skill，也可以直接打开下面任意一个文件，复制到 AI 对话里使用：
 
-- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
-- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+- [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
+- [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 
 ## 两窗口工作流
 
@@ -97,7 +97,7 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 
 ### 方式 1：直接复制提示词使用
 
-1. 打开 [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+1. 打开 [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 2. 复制完整 `提示词1`
 3. 粘贴到 `A窗口`
 4. 在 `我的粗略想法是：` 后补充你的需求
@@ -106,7 +106,7 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 
 ### 方式 2：作为 skill 使用
 
-1. 打开 [SKILL.md](./SKILL.md)
+1. 打开 [p2i-workflow/SKILL.md](./p2i-workflow/SKILL.md)
 2. 让 agent 按 skill 规则执行
 3. 输入你的粗略中文生图想法
 4. 获取结构化的 `提示词2`
@@ -133,7 +133,7 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 
 推荐文件：
 
-- [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+- [p2i-workflow/prompts/prompt1-final-cn.md](./p2i-workflow/prompts/prompt1-final-cn.md)
 
 ### 用英文更合适
 
@@ -144,7 +144,7 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 
 推荐文件：
 
-- [prompts/prompt1-final-en.md](./prompts/prompt1-final-en.md)
+- [p2i-workflow/prompts/prompt1-final-en.md](./p2i-workflow/prompts/prompt1-final-en.md)
 
 ### 一句话规则
 
@@ -187,9 +187,9 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 
 ## 示例
 
-- [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
-- [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
-- [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)
+- [p2i-workflow/examples/plush-toy-fight-example.md](./p2i-workflow/examples/plush-toy-fight-example.md)
+- [p2i-workflow/examples/skincare-bottle-product-example.md](./p2i-workflow/examples/skincare-bottle-product-example.md)
+- [p2i-workflow/examples/cyberpunk-poster-example.md](./p2i-workflow/examples/cyberpunk-poster-example.md)
 
 ## 开源协作文件
 
@@ -208,21 +208,18 @@ B窗口 = 生图执行上下文，复制提示词2进行生图
 ## 仓库结构
 
 ```txt
-p2i-workflow/
+repo-root/
 ├─ README.md
 ├─ README.zh-CN.md
-├─ SKILL.md
 ├─ LICENSE
-├─ .gitignore
-├─ prompts/
-│  └─ prompt1-final-cn.md
-├─ examples/
-│  ├─ plush-toy-fight-example.md
-│  ├─ skincare-bottle-product-example.md
-│  └─ cyberpunk-poster-example.md
-└─ docs/
-   ├─ workflow.md
-   └─ acceptance.md
+├─ CONTRIBUTING.md
+├─ CHANGELOG.md
+├─ SECURITY.md
+└─ p2i-workflow/
+   ├─ SKILL.md
+   ├─ prompts/
+   ├─ examples/
+   └─ docs/
 ```
 
 ## Workspace Skill 入口
@@ -253,7 +250,7 @@ p2i-workflow/
 
 ## 验收标准
 
-见 [docs/acceptance.md](./docs/acceptance.md)。
+见 [p2i-workflow/docs/acceptance.md](./p2i-workflow/docs/acceptance.md)。
 
 ## License
 
