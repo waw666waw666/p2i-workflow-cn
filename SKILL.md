@@ -11,6 +11,12 @@ description: Turn rough Chinese image ideas into a structured final image prompt
 
 这不是生图 skill，而是 prompt engineering skill。
 
+优先目标：
+
+- 把模糊想法变成稳定结构
+- 让输出可以直接复制
+- 避免 agent 越权直接生图
+
 ## Required behavior
 
 - 当前工作流只有两个上下文：`A窗口` 和 `B窗口`
@@ -51,6 +57,13 @@ description: Turn rough Chinese image ideas into a structured final image prompt
 5. 给出少量可替换变量和后续扩展方向
 6. 做一次质量检查
 
+## Decision rules
+
+- 如果用户需求里有多个方向，主动收束成一个主路线
+- 如果用户信息不完整，补一个最稳妥默认方案，不要停在追问
+- 如果用户明确要求“直接给我能复制的”，仍然必须保留固定结构和唯一代码块规则
+- 如果用户只是说“帮我写 Prompt”，默认使用本工作流，不直接切到图像生成
+
 ## Rules
 
 - 不改变用户核心主题
@@ -67,3 +80,4 @@ description: Turn rough Chinese image ideas into a structured final image prompt
 ## Example
 
 参考 [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)。
+也可参考 [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md) 和 [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)。

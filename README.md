@@ -115,6 +115,7 @@ p2i-workflow-cn/
 
 - [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
 - [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
+- [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)
 
 ## 兼容性说明
 
