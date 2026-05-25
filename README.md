@@ -1,150 +1,164 @@
 # P2I Workflow
 
+[English](./README.md) | [简体中文](./README.zh-CN.md)
+
 > Prompt to Image Workflow CN
-> 一个面向中文用户的 AI 生图提示词工作流，同时可作为可复用 skill 使用。
+> A reusable skill and prompt workflow for turning rough Chinese image ideas into structured, copy-ready final prompts.
 
-P2I 是 `Prompt to Image` 的缩写。
+P2I stands for `Prompt to Image`.
 
-这个项目解决的不是“直接生图”，而是“先把粗略想法整理成稳定、可复制、适合继续投喂生图工具的最终 Prompt”。
+This repository is not an image generation app. It is a prompt engineering workflow that helps users move from a rough idea to a stable final prompt before sending it to an image model.
 
-核心流程：
+## Why this skill
+
+Most image prompting failures happen before image generation:
+
+- The model starts generating images instead of returning a prompt
+- The output is hard to copy and reuse
+- Chinese prompts are unstable in structure
+- `Negative Prompt` is missing or generic
+- Multiple conflicting styles get mixed together
+- There is no fixed workflow from rough idea to final prompt
+
+P2I solves that with a strict two-window workflow.
 
 ```txt
-提示词1 -> 提示词2 -> 生图
+Prompt 1 -> Prompt 2 -> Image generation
 ```
 
-两窗口工作流：
+## Core advantages
+
+- `Two-window discipline`: separate prompt generation from actual image generation
+- `Copy-ready output`: exactly one code block for the final prompt section
+- `Chinese-first`: optimized for Chinese long-form prompting
+- `Reusable as a skill`: can be loaded by agents or used as a plain prompt template
+- `Stable structure`: image type, direction, structure, final prompt, variables, versions, quality check
+- `Safer prompting`: reduces style collision and accidental model overreach
+
+## How it works
 
 ```txt
-GitHub 提示词1模板 / Skill
+GitHub Prompt 1 template / Skill
 ↓
-A窗口：根据粗略想法生成提示词2，只输出文字，不生图
+A Window: turns a rough idea into Prompt 2, text only, no image generation
 ↓
-B窗口：复制提示词2真正生图
+B Window: uses Prompt 2 for actual image generation
 ```
 
-## 这是什么
-
-- 一个文档型开源仓库，不是 Web App，不需要后端，不需要 API。
-- 一个可直接复制使用的中文 Prompt 模板仓库。
-- 一个可被 agent 直接加载的 skill。
-
-## 它解决什么问题
-
-- AI 直接开始生图，而不是先给出 Prompt
-- 输出松散，不方便复制
-- 中文 Prompt 结构不稳定
-- Negative Prompt 容易遗漏
-- 多种风格混在一起，导致结果不稳
-- 缺少“粗略想法 -> 最终 Prompt -> 生图”的固定流程
-
-## 两种用法
-
-### 1. 直接复制提示词使用
-
-1. 打开 [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
-2. 复制完整提示词1
-3. 粘贴到 `A窗口`
-4. 在 `我的粗略想法是：` 后补充你的需求
-5. 让 A窗口输出提示词2
-6. 复制其中【最终可复制提示词】代码块内容到 `B窗口` 生图
-
-### 2. 作为 skill 使用
-
-1. 打开 [SKILL.md](./SKILL.md)
-2. 让 agent 按 skill 规则执行
-3. 输入你的粗略生图想法
-4. 获取结构化的提示词2
-
-## 提示词2 标准输出
-
-- 图片类型判断
-- 参考方向
-- 结构提炼
-- 最终可复制提示词
-- 可替换变量
-- 可选版本方向
-- 质量检查
-
-输出硬约束：
-
-- 整个输出只允许出现 1 个代码块
-- 只有【最终可复制提示词】放进代码块
-- 代码块内必须同时包含：
-  - 中文最终提示词
-  - Negative Prompt
-- A窗口只输出文字，不生图
-- 默认不输出英文 Prompt
-- 默认不输出中文精简版
-
-## 核心定义
+### Definitions
 
 ```txt
-提示词1 = 元提示词模板 / Skill 规则入口
-提示词2 = 根据粗略想法生成的最终生图提示词
-A窗口 = 提示词2生成上下文，只输出文字，不生图
-B窗口 = 生图执行上下文，复制提示词2进行生图
+Prompt 1 = the meta prompt template / skill entry
+Prompt 2 = the final image prompt generated from the rough idea
+A Window = prompt generation context, text only, no image generation
+B Window = image generation context, copies Prompt 2 to create the image
 ```
 
-## 仓库结构
+## Quick start
+
+### Option 1. Use the prompt directly
+
+1. Open [prompts/prompt1-final-cn.md](./prompts/prompt1-final-cn.md)
+2. Copy the full Prompt 1 template
+3. Paste it into your `A Window`
+4. Fill in your idea after `我的粗略想法是：`
+5. Copy the single code block from `【最终可复制提示词】`
+6. Paste it into your `B Window` or another image generation tool
+
+### Option 2. Use it as a skill
+
+1. Open [SKILL.md](./SKILL.md)
+2. Let your agent follow the skill rules
+3. Give it a rough Chinese image idea
+4. Get a structured Prompt 2 output
+
+## Output format
+
+The workflow output always includes:
+
+- `【图片类型判断】`
+- `【参考方向】`
+- `【结构提炼】`
+- `【最终可复制提示词】`
+- `【可替换变量】`
+- `【可选版本方向】`
+- `【质量检查】`
+
+Hard rules:
+
+- Only one code block is allowed in the entire output
+- That code block only appears in `【最终可复制提示词】`
+- The code block must contain:
+  - `中文最终提示词`
+  - `Negative Prompt`
+- `A Window` only outputs text
+- No English prompt by default
+- No short Chinese version by default
+
+## Best use cases
+
+- Product shots
+- Posters
+- Character key visuals
+- Toy and stylized scenes
+- Social media campaign images
+- E-commerce hero images
+- Brand KV exploration
+
+## Examples
+
+- [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
+- [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
+- [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)
+
+## Compatibility
+
+This workflow is optimized for Chinese long prompts first.
+
+- `GPT Image / GPT Image 2 / 即梦 / 可灵` usually work well with the full Chinese prompt
+- `Midjourney / Stable Diffusion / some other tools` may treat formatting and `Negative Prompt` differently
+- If a platform does not work well with the full structure, keep the main Chinese final prompt first and adapt from there
+
+## Repository structure
 
 ```txt
 p2i-workflow-cn/
 ├─ README.md
+├─ README.zh-CN.md
 ├─ SKILL.md
 ├─ LICENSE
 ├─ .gitignore
 ├─ prompts/
 │  └─ prompt1-final-cn.md
 ├─ examples/
-│  └─ plush-toy-fight-example.md
+│  ├─ plush-toy-fight-example.md
+│  ├─ skincare-bottle-product-example.md
+│  └─ cyberpunk-poster-example.md
 └─ docs/
    ├─ workflow.md
    └─ acceptance.md
 ```
 
-## 示例
+## Workspace skill entry
 
-示例粗略想法：
+If you use Codex / OpenCode inside `D:\VsCodeProjects`, you can also mount the local workspace entry skill:
 
-```txt
-两个毛绒玩偶在迷你桌面擂台上打架，可爱幽默，不血腥，像玩具广告图。
-```
+- `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow-cn/SKILL.md`
 
-完整示例见：
+That local entry skill points back to this repository as the source of truth.
 
-- [examples/plush-toy-fight-example.md](./examples/plush-toy-fight-example.md)
-- [examples/skincare-bottle-product-example.md](./examples/skincare-bottle-product-example.md)
-- [examples/cyberpunk-poster-example.md](./examples/cyberpunk-poster-example.md)
+## Reference sites
 
-## 兼容性说明
-
-本工作流优先面向中文长提示词场景。
-
-- `GPT Image / GPT Image 2 / 即梦 / 可灵` 通常可直接吃完整中文 Prompt
-- `Midjourney / Stable Diffusion / 部分平台` 对格式和 `Negative Prompt` 的支持不同
-- 如果目标平台不适合整段结构，优先保留【中文最终提示词】主体，再按平台特性微调
-
-## 参考网站
-
-以下网站仅用于学习提示词结构、风格分类、画面组织方式和专业写法：
+These sites are used only to study prompt structure, composition patterns, and professional phrasing:
 
 1. [EvoLink GPT Image 2 Prompts](https://evolink.ai/zh/gpt-image-2-prompts)
 2. [GPT Image 2 Prompt Gallery](https://gpt-image2.canghe.ai/)
 
-本项目不会复制、搬运或二次分发上述网站的原始 Prompt 内容。
+This project does not copy or redistribute raw prompts from those websites.
 
-## 验收标准
+## Acceptance
 
-验收清单见 [docs/acceptance.md](./docs/acceptance.md)。
-
-## Workspace Skill 入口
-
-如果你在 `D:\VsCodeProjects` 工作区内使用 Codex / OpenCode，可挂一个本地入口 skill：
-
-- `D:/VsCodeProjects/.trae/skills/trae-p2i-workflow-cn/SKILL.md`
-
-这个入口 skill 会把本仓库作为 `source of truth`，方便后续在工作区里直接触发 `P2I Workflow`，而不需要每次手动打开仓库文件。
+See [docs/acceptance.md](./docs/acceptance.md).
 
 ## License
 
